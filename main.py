@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 import uvicorn
-import calendar
+import math
 
 app = FastAPI()
 
@@ -9,10 +9,10 @@ async def root():
     return {"message": "Hello folks!"}
 
 @app.get("/cal/month")
-async def cal(month: int):
-    """Find what classes we have on day input"""
-    c = calendar.TextCalendar(calendar.SUNDAY)
-    print(c.prmonth(2021, month))
+async def guards(walls: int):
+    """Returns the smallest number of guards sufficient to protect your art gallery"""
+    return floor(months / 3)
+   
     
 if __name__ == '__main__':
     uvicorn.run(app, port=8080, host='0.0.0.0')
