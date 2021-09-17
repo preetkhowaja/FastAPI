@@ -1,4 +1,4 @@
-from main import movie, guards
+from main import root
 from fastapi.testclient import TestClient
 from main import app
 
