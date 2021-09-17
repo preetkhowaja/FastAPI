@@ -1,3 +1,6 @@
 fastapi
 pylint
 uvicorn
+black
+pytest-cov
+click

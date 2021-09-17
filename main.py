@@ -5,9 +5,12 @@ import imdb
 
 app = FastAPI()
 
+
 @app.get("/")
 async def root():
-    return {"message": """Hello folks! You can use this microservice to search a movie with a key word or find the number of guards you need to protect you art gallery :)"""}
+    return {
+        "message": "Hello folks!"}
+
 
 @app.get("/guards/walls")
 async def guards(walls: int):
@@ -23,7 +26,7 @@ async def movie(string1: str):
     for i in search:
         emp_list.append(i["title"])
     return emp_list
-        
-    
-if __name__ == '__main__':
-    uvicorn.run(app, port=8080, host='0.0.0.0')
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, port=8080, host="0.0.0.0")
