@@ -4,3 +4,5 @@ uvicorn
 black
 pytest-cov
 click
+requests
+imdb
