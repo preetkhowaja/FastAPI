@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 import math
-import imdb
+from imdb import IMDb
 
 app = FastAPI()
 
@@ -19,7 +19,7 @@ async def guards(walls: int):
 
 @app.get("/movie/string1")
 async def movie(string1: str):
-    ia = imdb.IMDb()
+    ia = IMDb()
     name = string1
     emp_list = []
     search = ia.search_movie(name)
