@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 import uvicorn
 import math
-from imdbpy import IMDb
+from imdb import IMDb
 
 app = FastAPI()
 
