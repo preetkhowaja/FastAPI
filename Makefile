@@ -1,6 +1,6 @@
 install:
 	pip install --upgrade pip &&\
-		python3.8.12 pip install -r requirements.txt
+		python -m pip install -r requirements.txt
 
 test:
 	python -m pytest -vv test_main.py
