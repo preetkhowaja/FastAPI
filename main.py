@@ -11,12 +11,6 @@ async def root():
     return {
         "message": "Hello folks!"}
 
-
-@app.get("/guards/walls")
-async def guards(walls: int):
-    """Returns the smallest number of guards sufficient to protect your art gallery"""
-    return math.floor(walls / 3)
-
 @app.get("/movie/string1")
 async def movie(string1: str):
     ia = IMDb()
@@ -27,6 +21,14 @@ async def movie(string1: str):
         emp_list.append(i["title"])
     return emp_list
 
-
+@app.get("/genre/string2")
+async def genre(string2: str):
+    ia = IMDb()
+    info = ia.search_movie(string2)
+    ID = info[0].movieID
+    movie = ia.get_movie(ID)
+    for genre in movie['genres']:
+        return genre
+    
 if __name__ == "__main__":
     uvicorn.run(app, port=8080, host="0.0.0.0")
